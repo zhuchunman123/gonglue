@@ -74,7 +74,7 @@
 	import homeList from "./home-list"
 	
 	// 引入分段器组件
-	import {uniSegmentedControl} from "@dcloudio/uni-ui"
+	// import {uniSegmentedControl} from "@dcloudio/uni-ui"
 	export default {
 		components:{
 			// 注册组件
@@ -83,7 +83,7 @@
 			homeRecommend,
 			homeList,
 			
-			uniSegmentedControl
+			// uniSegmentedControl
 			
 		},
 		data(){
