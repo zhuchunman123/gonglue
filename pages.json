@@ -1,0 +1,94 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		
+		{
+			"path": "pages/home/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/category/index",
+			"style": {
+				"navigationBarTitleText": "分类"
+			}
+		},
+		{
+			"path": "pages/information/index",
+			"style": {
+				"navigationBarTitleText": "消息"
+			}
+		},
+		{
+			"path": "pages/mine/index",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages/details/details",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/search/index",
+			"style": {
+				"navigationBarTitleText": "搜索"
+			}
+		}
+		
+        
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "旅游论坛",
+		"navigationBarBackgroundColor": "#9d6c65"
+		
+		// "navigationStyle": "custom"
+
+	},
+	"tabBar":{
+		"color":"#8a8a8a",
+		"selectedColor":"#d4237a",
+		"backgroundColor":"#fff",
+		"position":"bottom",
+		"borderStyle":"black",
+		"list":[
+			{
+				"pagePath":"pages/home/index",
+				"text":"首页",
+				"iconPath":"static/icon/_home.png",
+				"selectedIconPath":"static/icon/home.png"
+			},
+			{
+				"pagePath":"pages/category/index",
+				"text":"分类",
+				"iconPath":"static/icon/_img.png",
+				"selectedIconPath":"static/icon/img.png"
+			},
+			{
+				"pagePath":"pages/information/index",
+				"text":"消息",
+				"iconPath":"static/icon/_videocamera.png",
+				"selectedIconPath":"static/icon/videocamera.png"
+			},
+			{
+				"pagePath":"pages/mine/index",
+				"text":"我的",
+				"iconPath":"static/icon/_my.png",
+				"selectedIconPath":"static/icon/my.png"
+			}
+		]
+	},
+	"condition" : { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
+			{
+				"name": "", //模式名称
+				"path": "", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			}
+		]
+	}
+}
