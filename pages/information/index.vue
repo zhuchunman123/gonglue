@@ -51,11 +51,13 @@
 			color: #222222;
 			font-weight: 700;
 			width: 95%;
+			background-color: #FFFFFF;
 		}
 		p{
 			line-height: 60rpx;
 			font-size: 20px;
 			width: 5%;
+			background-color: #FFFFFF;
 		}
 	}
 

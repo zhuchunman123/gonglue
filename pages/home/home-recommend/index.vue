@@ -12,6 +12,7 @@
 				<view class="recommend_img">
 					<image :src="item.img" mode=""></image>
 				</view>
+				
 				<!-- 右侧示例信息 -->
 				<view class="recommend_info">
 					<view class="recommend_title">{{item.title}}</view>
@@ -92,7 +93,6 @@
 				flex: 1;
 				margin: 10rpx;
 				overflow: hidden;
-				border: 1px solid #007AFF;
 				image{
 				width: 100%;
 				height: 100%;
