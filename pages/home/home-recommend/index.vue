@@ -8,9 +8,11 @@
 			v-for="item in recommend"
 			:key="item.id"
 			>
+				<!-- 左侧图片 -->
 				<view class="recommend_img">
-					<image :src="item.img" mode="widthFix"></image>
+					<image :src="item.img" mode=""></image>
 				</view>
+				<!-- 右侧示例信息 -->
 				<view class="recommend_info">
 					<view class="recommend_title">{{item.title}}</view>
 					<view class="recommend_label">{{item.label}}</view>
@@ -37,10 +39,10 @@
 			return {
 			//列表数组
 			recommend:[
-				{img:"https://img0.baidu.com/it/u=2635130093,4202492912&fm=26&fmt=auto&gp=0.jpg",
+				{img:"https://img1.baidu.com/it/u=4110196045,3829597861&fm=26&fmt=auto&gp=0.jpg",
 				title:"标题1",
 				label:"标签1",
-				head:"https://img0.baidu.com/it/u=2635130093,4202492912&fm=26&fmt=auto&gp=0.jpg",
+				head:"https://img1.baidu.com/it/u=4110196045,3829597861&fm=26&fmt=auto&gp=0.jpg",
 				nickname:"昵称",
 				see:18,
 				
@@ -48,7 +50,21 @@
 				{img:"https://img1.baidu.com/it/u=4110196045,3829597861&fm=26&fmt=auto&gp=0.jpg",
 				title:"标题2",
 				label:"标签2",
-				head:"https://img0.baidu.com/it/u=2635130093,4202492912&fm=26&fmt=auto&gp=0.jpg",
+				head:"https://img1.baidu.com/it/u=4110196045,3829597861&fm=26&fmt=auto&gp=0.jpg",
+				nickname:"昵称",
+				see:18,
+				},
+				{img:"https://img1.baidu.com/it/u=4110196045,3829597861&fm=26&fmt=auto&gp=0.jpg",
+				title:"标题2",
+				label:"标签2",
+				head:"https://img1.baidu.com/it/u=4110196045,3829597861&fm=26&fmt=auto&gp=0.jpg",
+				nickname:"昵称",
+				see:18,
+				},
+				{img:"https://img1.baidu.com/it/u=4110196045,3829597861&fm=26&fmt=auto&gp=0.jpg",
+				title:"标题2",
+				label:"标签2",
+				head:"https://img1.baidu.com/it/u=4110196045,3829597861&fm=26&fmt=auto&gp=0.jpg",
 				nickname:"昵称",
 				see:18,
 				}
@@ -64,27 +80,37 @@
 
 <style lang="scss" scoped>
 	.recommend_list{
-		background-color: #e3e3e3;
 		padding: 0;
 		.recommend_item{
+			height: 180rpx;
 			padding: 0;
 			display: flex;
 			background-color: #FFFFFF;
+			margin-top: 5rpx;
 			
-			margin: 5rpx 0;
 			.recommend_img{
 				flex: 1;
-				padding: 10rpx;
+				margin: 10rpx;
+				overflow: hidden;
+				border: 1px solid #007AFF;
+				image{
+				width: 100%;
+				height: 100%;
+					
+				}
 			}
 			.recommend_info{
+				background-color: #FFFFFF;
 				flex: 2;
 				padding: 0 10rpx;
 				.recommend_title{
+					background-color: #FFFFFF;
 					font-size: 30rpx;
 					color: #000;
 					padding: 10rpx 0;
 				}
 				.recommend_label{
+					background-color: #FFFFFF;
 					display: inline-block;
 					height: 40rpx;
 					font-size: 14rpx;
@@ -96,6 +122,7 @@
 					
 				}
 				.recommend_add{
+					background-color: #FFFFFF;
 					display: flex;
 					padding: 10rpx 0;
 					line-height: 50rpx;
@@ -116,12 +143,15 @@
 					}
 					.recommend_nickname{
 						margin-right: 30rpx;
+						background-color: #FFFFFF;
 					}
 					.recommend_see{
 						font-size: 20rpx;
+						background-color: #FFFFFF;
 					}
 					.recommend_function{
 						float: right;
+						background-color: #FFFFFF;
 					}
 				}
 			}

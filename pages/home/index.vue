@@ -1,8 +1,7 @@
 <template>
 	<view class="home_page">
-		<!-- <text class="iconfont iconvideocamera"></text> -->
-		<!-- <uni-badge text="1"></uni-badge> -->
 		
+		<!-- 定位   搜索栏 （待完善）-->
 		<view class="top">
 			<view class="address" @click="chooseAddress">{{address}}ccc</view>
 			<view class="search">
@@ -15,7 +14,7 @@
 		<!-- 轮播图开始 -->
 		<navigator class='home' url="../details/details">
 			<swiper
-			indicator-dots 	
+			indicator-dots
 			circular
 			autoplay
 			interval=3000
@@ -23,13 +22,17 @@
 				<swiper-item v-for="(item,index) in swipers" :key="index">
 					<image :src="item"></image>
 				</swiper-item>
-				<swiper-item>2</swiper-item>
 			</swiper>
 		</navigator>
 		<!-- 轮播图结束 -->
 		
 		<!-- 分区 -->
-		<view class="area"></view>
+		<view class="area_list">
+			<view class="area_item" v-for="item in areas" :key = "item.id">
+				<view class="area_img"><image :src="item.cover" mode=""></image></view>
+				<view class="area_title">{{item.title}}</view>
+			</view>
+		</view>
 		
 		
 		<!-- 分段器，关注、推荐、热榜 -->
@@ -74,7 +77,7 @@
 	import homeList from "./home-list"
 	
 	// 引入分段器组件
-	// import {uniSegmentedControl} from "@dcloudio/uni-ui"
+	import {uniSegmentedControl} from "@dcloudio/uni-ui"
 	export default {
 		components:{
 			// 注册组件
@@ -83,7 +86,7 @@
 			homeRecommend,
 			homeList,
 			
-			// uniSegmentedControl
+			uniSegmentedControl
 			
 		},
 		data(){
@@ -93,6 +96,29 @@
 				swipers:[],
 				address:"df",
 				
+				// 分区列表
+				areas:[
+					{
+						cover:"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg95.699pic.com%2Fphoto%2F40125%2F0071.gif_wh300.gif%21%2Fgifto%2Ftrue&refer=http%3A%2F%2Fimg95.699pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1629288120&t=ff9b7266a4adffb3039e07f0c159072a",
+						title:"自然探索"
+					},
+					{
+						cover:"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg95.699pic.com%2Fphoto%2F40125%2F0071.gif_wh300.gif%21%2Fgifto%2Ftrue&refer=http%3A%2F%2Fimg95.699pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1629288120&t=ff9b7266a4adffb3039e07f0c159072a",
+						title:"人文风土"
+					},
+					{
+						cover:"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg95.699pic.com%2Fphoto%2F40125%2F0071.gif_wh300.gif%21%2Fgifto%2Ftrue&refer=http%3A%2F%2Fimg95.699pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1629288120&t=ff9b7266a4adffb3039e07f0c159072a",
+						title:"职业攻略"
+					},
+					{
+						cover:"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg95.699pic.com%2Fphoto%2F40125%2F0071.gif_wh300.gif%21%2Fgifto%2Ftrue&refer=http%3A%2F%2Fimg95.699pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1629288120&t=ff9b7266a4adffb3039e07f0c159072a",
+						title:"城市足迹"
+					},
+					{
+						cover:"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg95.699pic.com%2Fphoto%2F40125%2F0071.gif_wh300.gif%21%2Fgifto%2Ftrue&refer=http%3A%2F%2Fimg95.699pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1629288120&t=ff9b7266a4adffb3039e07f0c159072a",
+						title:"乡土乐趣"
+					}
+				],
 				
 				items:[
 					{title:"关注"},
@@ -122,37 +148,11 @@
 			}
 		},
 		onLoad() {
-			
-			// this.request({
-			// 	url:""
-			// })
-			// .then(res=>{
-			// 	console.log(res)
-			// });
-			
-			
 			this.swipers=['https://app-file.beitaichufang.com/img/H5/web/banner/banner20.jpg',
 						"https://app-file.beitaichufang.com/img/H5/web/banner/banner21.jpg",
 						"https://app-file.beitaichufang.com/img/H5/web/banner/banner22.jpg",
 						"https://app-file.beitaichufang.com/img/H5/web/banner/banner23.jpg"
 						];
-			
-			
-			// // 1 原生的微信小程序的api
-			// wx.request({
-			// 	url:"",
-			// 	success(res){
-			// 		console.log(res);
-			// 	}
-			// })
-			
-			// // 2 uni-api
-			// uni.request({
-			// 	url:""
-			// })
-			// .then(res=>{
-			// 	console.log(res);
-			// })
 		}
 	}
 </script>
@@ -160,7 +160,7 @@
 <style lang="scss">
 	.top{
 		display: flex;
-		margin: 10rpx 20rpx;
+		padding: 10rpx 20rpx;
 		
 		.address{
 			flex: 1;
@@ -189,22 +189,16 @@
 		
 	}
 	.home_page{
-		
+		background-color: #f1f1f1;
 		.home_tab{
-			
+			background-color: #FFFFFF;
 			.home_tab_title{
 				position: relative;
 				.title_inner{
 					width: 60%;
 					margin: 0 auto;
 				}
-				// .iconsearch{
-				// 	position: absolute;
-				// 	top: 50%;
-				// 	transform: translateY(-50%);
-				// 	right: 5%;
-					
-				// }
+				
 			}
 		}
 		.home{
@@ -217,5 +211,36 @@
 			}
 		}
 	}
-
+	.area_list{
+		background-color: #FFFFFF;
+		display: flex;
+		padding: 10rpx 20rpx;
+		margin-bottom: 10rpx;
+		.area_item{
+			background-color: #FFFFFF;
+			flex: 1;
+			height: 180rpx;
+			flex-direction: column;
+			flex: 1;
+			.area_img{
+				height: 120rpx;
+				margin: 10rpx 5rpx;
+				border-radius: 50%;
+				overflow: hidden;
+				image{
+					width: 100%;
+					height: 100%;
+					
+				}
+			}
+			.area_title{
+				background-color: #FFFFFF;
+				height: 30rpx;
+				line-height: 40rpx;
+				font-size: 24rpx;
+				font-weight: bold;
+				text-align: center;
+			}
+		}
+	}
 </style>
