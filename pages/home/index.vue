@@ -6,9 +6,9 @@
 		
 		<!-- 定位   搜索栏 （待完善）-->
 		<view class="top">
-			<view class="address" @click="chooseAddress">{{address}}ccc</view>
+			<view class="address" @click="chooseAddress">{{address}}swe</view>
 			<view class="search">
-				<input type="text" value="" placeholder="请搜索"/>
+				<input class="iconfont iconsearch" type="text" value="" placeholder=""/>
 				<button>搜索</button>
 			</view>
 			
@@ -97,8 +97,7 @@
 				
 				title: 'Hello',
 				swipers:[],
-				address:"df",
-				
+				address:"",
 				// 分区列表
 				areas:[
 					{
@@ -140,11 +139,11 @@
 			chooseAddress(){
 				uni.chooseLocation({
 					success: function (res) {
-						console.log('位置名称：' + res.name);
+						// console.log('位置名称：' + res.name);
 						console.log('详细地址：' + res.address);
-						console.log('纬度：' + res.latitude);
-						console.log('经度：' + res.longitude);
-						
+						// console.log('纬度：' + res.latitude);
+						// console.log('经度：' + res.longitude);
+						this.address = res.address
 						
 					}
 				});
@@ -166,13 +165,13 @@
 		padding: 10rpx 20rpx;
 		
 		.address{
-			flex: 1;
 			line-height: 60rpx;
 		}
 		
 		.search{
 			display: flex;
 			flex: 7;
+			line-height: 60rpx;
 			input{
 				border-radius: 15rpx;
 				background-color: #d6d5da;
@@ -184,7 +183,7 @@
 				flex: 1;
 				height: 60rpx;
 				font-size: 24rpx;
-				line-height: 60rpx;
+				
 				margin-right: auto;
 			}
 		}

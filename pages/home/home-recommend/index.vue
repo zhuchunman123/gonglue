@@ -41,7 +41,7 @@
 			//列表数组
 			recommend:[
 				{img:"https://img1.baidu.com/it/u=4110196045,3829597861&fm=26&fmt=auto&gp=0.jpg",
-				title:"标题1",
+				title:"标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1标题1",
 				label:"标签1",
 				head:"https://img1.baidu.com/it/u=4110196045,3829597861&fm=26&fmt=auto&gp=0.jpg",
 				nickname:"昵称",
@@ -90,7 +90,7 @@
 			margin-top: 5rpx;
 			
 			.recommend_img{
-				flex: 1;
+				width: 200rpx;
 				margin: 10rpx;
 				overflow: hidden;
 				image{
@@ -101,24 +101,28 @@
 			}
 			.recommend_info{
 				background-color: #FFFFFF;
-				flex: 2;
+				
 				padding: 0 10rpx;
 				.recommend_title{
+					width: 500rpx;
 					background-color: #FFFFFF;
 					font-size: 30rpx;
 					color: #000;
 					padding: 10rpx 0;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
 				}
 				.recommend_label{
 					background-color: #FFFFFF;
 					display: inline-block;
 					height: 40rpx;
-					font-size: 14rpx;
+					font-size: 8px;
 					border: 1px solid #DD524D;
 					border-radius: 20rpx;
 					text-align: center;
 					line-height: 40rpx;
-					padding: 0 10rpx;
+					padding: 0 20rpx;
 					
 				}
 				.recommend_add{

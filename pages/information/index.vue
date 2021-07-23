@@ -49,7 +49,7 @@
 			line-height: 60rpx;
 			font-size: 16px;
 			color: #222222;
-			font-weight: 700;
+			font-weight: 600;
 			width: 95%;
 			background-color: #FFFFFF;
 		}

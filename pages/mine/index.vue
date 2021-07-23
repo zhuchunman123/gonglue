@@ -185,6 +185,8 @@
 			h4{
 				font-size: 16px;
 				background-color: #FFFFFF;
+				color:#222222;
+				font-weight: 600;
 			}
 			p{
 				font-size: 14px;
@@ -208,7 +210,7 @@
 				line-height: 60rpx;
 				font-size: 16px;
 				color: #222222;
-				font-weight: 700;
+				font-weight: 600;
 				width: 95%;
 				background-color: #FFFFFF;
 			}
@@ -262,7 +264,7 @@
 					line-height: 60rpx;
 					font-size: 16px;
 					color: #222222;
-					font-weight: 700;
+					font-weight: 600;
 				}
 			}
 		}
