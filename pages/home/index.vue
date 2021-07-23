@@ -8,7 +8,7 @@
 		<view class="top">
 			<view class="address" @click="chooseAddress">{{address}}swe</view>
 			<view class="search">
-				<input class="iconfont iconsearch" type="text" value="" placeholder=""/>
+				<input class="iconfont iconsearch" type="text" value="" placeholder="搜索"/>
 				<button>搜索</button>
 			</view>
 			
@@ -173,10 +173,11 @@
 			flex: 7;
 			line-height: 60rpx;
 			input{
-				border-radius: 15rpx;
-				background-color: #d6d5da;
+				border-radius: 50rpx;
+				background-color: #e9e8ec;
 				height: 60rpx;
 				flex: 7;
+				padding-left: 20rpx;
 			}
 			
 			button{
