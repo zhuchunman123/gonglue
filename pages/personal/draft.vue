@@ -19,11 +19,7 @@
 					<view class="recommend_label">{{item.label}}</view>
 					
 					<view class="recommend_add">
-						<view class="recommend_head">
-							<image :src="item.head" mode=""></image>
-						</view>
-						<view class="recommend_nickname">{{item.nickname}}</view>
-						<view class="recommend_see">{{item.see}}浏览量</view>
+
 						<view class="recommend_function">. . .</view>
 					</view>
 				</view>
@@ -45,7 +41,7 @@
 				label:"标签1",
 				head:"https://img1.baidu.com/it/u=4110196045,3829597861&fm=26&fmt=auto&gp=0.jpg",
 				nickname:"昵称",
-				see:18,
+
 				
 				},
 				{img:"https://img1.baidu.com/it/u=4110196045,3829597861&fm=26&fmt=auto&gp=0.jpg",
@@ -53,21 +49,20 @@
 				label:"标签2",
 				head:"https://img1.baidu.com/it/u=4110196045,3829597861&fm=26&fmt=auto&gp=0.jpg",
 				nickname:"昵称",
-				see:18,
+			
 				},
 				{img:"https://img1.baidu.com/it/u=4110196045,3829597861&fm=26&fmt=auto&gp=0.jpg",
 				title:"标题2",
 				label:"标签2",
 				head:"https://img1.baidu.com/it/u=4110196045,3829597861&fm=26&fmt=auto&gp=0.jpg",
 				nickname:"昵称",
-				see:18,
+			
 				},
 				{img:"https://img1.baidu.com/it/u=4110196045,3829597861&fm=26&fmt=auto&gp=0.jpg",
 				title:"标题2",
 				label:"标签2",
 				head:"https://img1.baidu.com/it/u=4110196045,3829597861&fm=26&fmt=auto&gp=0.jpg",
 				nickname:"昵称",
-				see:18,
 				}
 			]
 			};
@@ -131,28 +126,7 @@
 					padding: 10rpx 0;
 					line-height: 50rpx;
 					
-					.recommend_head{
-						
-						width: 50rpx;
-						height: 50rpx;
-						overflow: hidden;
-						border-radius: 50%;
-						
-						.img{
-							width: 100%;
-							height: 100%;
-						}
-						margin-right: 5rpx;
-						
-					}
-					.recommend_nickname{
-						margin-right: 30rpx;
-						background-color: #FFFFFF;
-					}
-					.recommend_see{
-						font-size: 20rpx;
-						background-color: #FFFFFF;
-					}
+					
 					.recommend_function{
 						background-color: #FFFFFF;
 						position: absolute;
@@ -160,6 +134,7 @@
 						font-weight: bold;
 						
 					}
+					
 				}
 			}
 		}

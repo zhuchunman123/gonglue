@@ -26,6 +26,12 @@
 			}
 		},
 		{
+			"path":"pages/mine/balance",
+			"style":{
+				"navigationBarTitleText":"账户余额"
+			}
+		},
+		{
 			"path": "pages/details/details",
 			"style": {
 				"navigationBarTitleText": ""

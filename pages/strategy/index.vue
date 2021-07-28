@@ -11,6 +11,7 @@
 
 		</view>
 		<!-- 职业创作者推荐 -->
+		<view style="margin: 10rpx 20rpx;font-size: 16px;color: #333333;">创作者推荐</view>
 		<view class="creator">
 			<scroll-view scroll-x="true" class="scroll">
 				<view class="box" v-for="(item,index) in creators" :key="index">
@@ -37,11 +38,9 @@
 			<text @click="shoucang">收藏最多</text>
 			<text@click="pinlun">评论最多</text>
 		</view>
-		<view class="neirong">
-			<view class="#" v-for="item in list" :key="item.id">
-				<text>{{item.title}}</text>
-				<text>{{item.label}}</text>
-			</view>
+		
+		<view>
+			<home-recommend></home-recommend>
 		</view>
 		
 		
@@ -52,7 +51,13 @@
 </template>
 
 <script>
+	
+	import homeRecommend from '../home/home-recommend/index.vue'
 	export default {
+		components:{
+			homeRecommend
+		},
+		
 		data() {
 			return {
 
@@ -75,37 +80,6 @@
 						nickname: "懒羊羊"
 					}
 				],
-				
-				// 
-				list: [],
-				list1: [{
-					title: "sws",
-					label: "snjaw",
-				}, {
-					title: "sdazxka",
-					label: "zaaxsdz"
-				}],
-				list2: [{
-					title: "xxxxx",
-					label: "x",
-				}, {
-					title: "sssssw",
-					label: "s"
-				}],
-				list3: [{
-					title: "xxxxx",
-					label: "x",
-				}, {
-					title: "sssssw",
-					label: "s"
-				}],
-				list4: [{
-					title: "xxxxx",
-					label: "x",
-				}, {
-					title: "sssssw",
-					label: "s"
-				}]
 			}
 		},
 		methods: {

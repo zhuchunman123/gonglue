@@ -37,7 +37,7 @@
 		</view>
 		
 		<!-- 余额，充值，收入，支出 -->
-		<view class="mine_balance">
+		<navigator class="mine_balance" url="balance">
 			<view class="balance_up">
 				<h4>账户余额</h4>
 				<p>></p>
@@ -46,7 +46,7 @@
 				<h4>剩余金币</h4>
 				<button type="default">立即充值</button>
 			</view>
-		</view>
+		</navigator>
 		
 		<!-- 各种功能设置 -->
 		

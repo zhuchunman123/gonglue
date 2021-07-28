@@ -203,7 +203,7 @@
 			.home_tab_title{
 				position: relative;
 				.title_inner{
-					width: 60%;
+					width: 100%;
 					margin: 0 auto;
 				}
 				
