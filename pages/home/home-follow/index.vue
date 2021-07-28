@@ -76,9 +76,7 @@
 </script>
 
 <style lang="scss" scoped>
-	
 	.follow_list{
-		
 		.follow_item{
 			background-color: #FFFFFF;
 			width: 100%;

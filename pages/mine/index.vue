@@ -57,10 +57,10 @@
 				</view>
 			</view>
 			<view class="set_content">
-				<view class="content_item" v-for="item in sets" :key="item.id">
+				<navigator class="content_item" v-for="item in sets" :key="item.id" :url="item.url">
 					<image :src="item.image" mode=""></image>
 					<p>{{item.text}}</p>
-				</view>
+				</navigator>
 				
 			</view>
 		</view>
@@ -115,6 +115,7 @@
 					{
 						image:"../../static/icon/icon_jsdz.png",
 						text:"创作中心",
+						url:"./release/index"
 					},
 					
 				]

@@ -160,7 +160,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.top{
 		display: flex;
 		padding: 10rpx 20rpx;

@@ -29,7 +29,7 @@
 	
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	
 	.info_normal{
 		height: 80rpx;

@@ -398,7 +398,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .cmd-progress { 
     box-sizing: border-box;
     margin: 0;

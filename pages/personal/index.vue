@@ -98,7 +98,7 @@
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.back{
 		width: 100%;
 		height: 250rpx;
