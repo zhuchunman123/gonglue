@@ -46,6 +46,7 @@
 				line-height: 100rpx;
 				background-color: #FFFFFF;
 				font-size: 16px;
+				margin-left: 25rpx;
 			}
 			.general_list{
 				

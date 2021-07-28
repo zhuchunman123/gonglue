@@ -15,9 +15,9 @@
 				</view>
 			</view>
 			<!-- 跳转到个人主页 -->
-			<view class="toPersonal">
+			<navigator class="toPersonal" url="../personal/index">
 				个人主页
-			</view>
+			</navigator>
 		</view>
 		
 		<!-- 发布、关注、收藏 -->

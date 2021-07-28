@@ -1,230 +1,241 @@
 <template>
-	<view class="page">
-		<!-- 分类 -->
-		<view class="menu">
-			
-			<!-- 左侧菜单 -->
-			<view class="leftScroll">
-				<view :class="isActive==index?'itemLeftTwo':'itemLeft'" :style="" v-for="(item,index) in leftItems" :key="index"
-				 @click="chooseClick(index)">
-					{{item.val}}
-				</view>
+
+	<view class="all">
+		<!-- 定位   搜索栏 （待完善）-->
+		<view class="top">
+			<view class="address" @click="chooseAddress">{{address}}选择</view>
+			<view class="search">
+				<input class="iconfont iconsearch" type="text" value="" placeholder="搜索" />
+				<view class="sousuo">搜索</view>
 			</view>
-			<!-- 右侧内容 -->
-			<view class="rightScroll">
-				<view class="bigConScro" v-for="(item,index) in array" :key="index">
-					<view class="topTitle">{{item.val}}</view>
-					<view class="botCitysList">
-						<view class="listItems" v-for="(items,citys) in array[0].city" :key="citys">{{items}}
+
+		</view>
+
+
+		<!-- 侧边菜单主体 -->
+		<view class="main">
+			<scroll-view scroll-y class="left_sv">
+				<view class="menu_item" v-for="(item, index) in list" :key="index" :class="active_index === index ? 'active' : ''"
+				 @click="handle_tab(index)">
+					{{ item.name }}
+				</view>
+			</scroll-view>
+			<scroll-view scroll-y class="right_sv">
+				<view class="right_content" v-for="(item,index) in array" :key="index">
+					<view class="title">{{item.name}}</view>
+					<view class="contentList">
+						<view class="listItems" v-for="(items,contents) in array[0].content" :key="contents">
+
+							<view class="content">
+								<image :src="items.image" mode=""></image>
+								<text>{{items.name}}</text>
+							</view>
 						</view>
+
 					</view>
 				</view>
-			</view>
+			</scroll-view>
 		</view>
 	</view>
+
 </template>
 
 <script>
 	export default {
 		data() {
 			return {
+				address:"",
 				
-				// 测试数据
-				isActive: 0,
-				leftItems: [{
-						val: '热门签证'
+				active_index: 0,
+				list: [{
+						name: 'hello'
 					},
 					{
-						val: '亚洲'
+						name: 'hello1'
 					},
 					{
-						val: '美洲'
+						name: 'hello2'
 					},
 					{
-						val: '欧洲'
-					},
-					{
-						val: '大洋洲'
-					},
-					{
-						val: '非洲'
-					},
-					{
-						val: '亚洲'
-					},
-					{
-						val: '美洲'
-					},
-					{
-						val: '欧洲'
-					},
-					{
-						val: '大洋洲'
-					},
-					{
-						val: '非洲'
-					},
-					{
-						val: '亚洲'
-					},
-					{
-						val: '美洲'
-					},
-					{
-						val: '欧洲'
-					},
-					{
-						val: '大洋洲'
-					},
-					{
-						val: '非洲'
+						name: 'hello3'
 					}
 				],
 				site: [{
-						val: '热门签证',
-						city: ['成都', '成都', '成都', '成都', '成都', '成都']
+						name: 'hello',
+						content: [{
+								name: "广州",
+								image: "https://img0.baidu.com/it/u=3844939064,2416681391&fm=26&fmt=auto&gp=0.jpg"
+							},
+							{
+								name: "广州",
+								image: "https://img0.baidu.com/it/u=3844939064,2416681391&fm=26&fmt=auto&gp=0.jpg"
+							}
+						]
 					},
 					{
-						val: '亚洲',
-						city: ['杭州', '成都', '成都', '成都', '成都', '成都']
+						name: 'hello1',
+						content: [{
+								name: "北京",
+								image: "https://img0.baidu.com/it/u=3844939064,2416681391&fm=26&fmt=auto&gp=0.jpg"
+							},
+							{
+								name: "北京",
+								image: "https://img0.baidu.com/it/u=3844939064,2416681391&fm=26&fmt=auto&gp=0.jpg"
+							}
+						]
 					},
 					{
-						val: '美洲',
-						city: ['美洲', '成都', '成都', '成都', '成都', '成都']
+						name: 'hello2',
+						content: [{
+								name: "上海",
+								image: "https://img0.baidu.com/it/u=3844939064,2416681391&fm=26&fmt=auto&gp=0.jpg"
+							},
+							{
+								name: "上海",
+								image: "https://img0.baidu.com/it/u=3844939064,2416681391&fm=26&fmt=auto&gp=0.jpg"
+							}
+						]
 					},
 					{
-						val: '欧洲',
-						city: ['欧洲', '成都', '成都', '成都', '成都', '成都']
+						name: 'hello3',
+						content: [{
+								name: "深圳",
+								image: "https://img0.baidu.com/it/u=3844939064,2416681391&fm=26&fmt=auto&gp=0.jpg"
+							},
+							{
+								name: "深圳",
+								image: "https://img0.baidu.com/it/u=3844939064,2416681391&fm=26&fmt=auto&gp=0.jpg"
+							}
+						]
 					},
-					{
-						val: '大洋洲',
-						city: ['大洋洲', '成都', '成都', '成都', '成都', '成都']
-					},
-					{
-						val: '非洲',
-						city: ['非洲', '成都', '成都', '成都', '成都', '成都']
-					},
-					{
-						val: '亚洲',
-						city: ['杭州', '成都', '成都', '成都', '成都', '成都']
-					},
-					{
-						val: '美洲',
-						city: ['美洲', '成都', '成都', '成都', '成都', '成都']
-					},
-					{
-						val: '欧洲',
-						city: ['欧洲', '成都', '成都', '成都', '成都', '成都']
-					},
-					{
-						val: '大洋洲',
-						city: ['大洋洲', '成都', '成都', '成都', '成都', '成都']
-					},
-					{
-						val: '非洲',
-						city: ['非洲', '成都', '成都', '成都', '成都', '成都']
-					},
-					{
-						val: '亚洲',
-						city: ['杭州', '成都', '成都', '成都', '成都', '成都']
-					},
-					{
-						val: '美洲',
-						city: ['美洲', '成都', '成都', '成都', '成都', '成都']
-					},
-					{
-						val: '欧洲',
-						city: ['欧洲', '成都', '成都', '成都', '成都', '成都']
-					},
-					{
-						val: '大洋洲',
-						city: ['大洋洲', '成都', '成都', '成都', '成都', '成都']
-					},
-					{
-						val: '非洲',
-						city: ['非洲', '成都', '成都', '成都', '成都', '成都']
-					}
+
 				],
 				array: []
-			}
+			};
 		},
+
 		created() {
 			// 初始化数据默认选中第一个
 			this.array.push(this.site[0])
 		},
 		methods: {
-			chooseClick(index) {
-				this.array = []
-				this.isActive = index;
-				this.array.push(this.site[index])
+			handle_tab(index) {
+				this.array = [],
+					this.active_index = index,
+					this.array.push(this.site[index])
 			},
+			chooseAddress(){
+				uni.chooseLocation({
+					success: function (res) {
+						// console.log('位置名称：' + res.name);
+						console.log('详细地址：' + res.address);
+						// console.log('纬度：' + res.latitude);
+						// console.log('经度：' + res.longitude);
+						this.address = res.address
+						
+					}
+				});
+			}
 		}
-	}
+	};
 </script>
 
-<style lang="scss" scoped>
-	.page {
-		
-		.menu {
-			
-			
+<style lang="scss">
+	.top {
+		display: flex;
+		padding: 10rpx 20rpx;
+		border-bottom: 1px solid #f0f0f0;
+
+		.address {
+			width: 100rpx;
+			height: 60rpx;
+			line-height: 60rpx;
+			text-align: center;
+			overflow: hidden;
+		}
+
+		.search {
 			display: flex;
-			background-color: #FFFFFF;
+			width: 100%;
+			line-height: 60rpx;
 
-			.leftScroll {
-				font-size: 28rpx;
-				font-weight: 400;
+			input {
+				border-radius: 50rpx;
+				background-color: #e9e8ec;
+				height: 60rpx;
+				flex: 5;
+				padding-left: 20rpx;
+				margin-right: 10rpx;
 
-				.itemLeft {
-					width: 186rpx;
-					height: 80rpx;
-					line-height: 80rpx;
-					// padding-left: 28rpx;
-					text-align: center;
-					color: #333333;
-					background-color: #F3F3F3;
-				}
-
-				.itemLeftTwo {
-					width: 186rpx;
-					height: 80rpx;
-					line-height: 80rpx;
-
-					background-color: #E2EDFF;
-					color: #2F77F1;
-					border-left: 4px solid #2F77F1;
-				}
+				line-height: 60rpx;
 			}
 
-			.rightScroll {
-				background-color: #FFFFFF;
-				width: 550rpx;
-				height: 1076rpx;
+			sousuo {
+				height: 60rpx;
+				font-size: 24rpx;
+				text-align: center;
+				background-color: #f4f4f4;
+			}
+		}
+	}
 
-				.bigConScro {
-					padding: 0 30rpx;
+	.main {
+		display: flex;
+		height: 100vh;
+
+		.left_sv {
+			flex: 2;
+			font-size: 28rpx;
+			font-weight: 400;
+
+			.menu_item {
+				height: 80rpx;
+				line-height: 80rpx;
+				text-align: center;
+				color: #333333;
+				background-color: #F3F3F3;
+
+			}
+
+			.active {
+				height: 80rpx;
+				line-height: 80rpx;
+
+				background-color: #E2EDFF;
+				color: #2F77F1;
+				border-left: 4px solid #2F77F1;
+			}
+		}
+
+		.right_sv {
+
+			flex: 5;
+			background-color: #ffffff;
+
+			.right_content {
+
+				.title {
 					background-color: #FFFFFF;
-					.topTitle {
-						margin-top: 20rpx;
-						font-size: 28rpx;
-						font-weight: 400;
-						color: #333333;
-						background-color: #FFFFFF;
-					}
+				}
 
-					.botCitysList {
-						background-color: #FFFFFF;
-						display: flex;
-						flex-wrap: wrap;
-						justify-content: space-between;
-						font-size: 24rpx;
-						font-weight: 400;
-						color: #333333;
-						margin-top: 44rpx;
+				.contentList {
 
-						.listItems {
-							margin-bottom: 20rpx;
+					.listItems {
+						padding: 20rpx;
+						background-color: #FFFFFF;
+
+						.content {
 							background-color: #FFFFFF;
+							margin: 20rpx 0;
+
+							image {
+								width: 100%;
+								height: 300rpx;
+							}
+
+							text {
+								background-color: #FFFFFF;
+							}
 						}
 					}
 				}

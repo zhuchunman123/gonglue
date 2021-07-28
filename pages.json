@@ -36,14 +36,31 @@
 			"style": {
 				"navigationBarTitleText": "搜索"
 			}
+		},
+		{
+            "path" : "pages/strategy/index",
+            "style": {
+                "navigationBarTitleText": "职业攻略"
+                
+            }
+        },
+		{
+			"path":"pages/personal/index",
+			"style":{
+				"navigationBarTitleText":""
+			}
+		},
+		{
+			"path":"pages/personal/data_edit",
+			"style":{
+				"navigationBarTitleText":"编辑个人资料"
+			}
 		}
-		
-        
     ],
 	"globalStyle": {
-		"navigationBarTextStyle": "white",
+		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "旅游论坛",
-		"navigationBarBackgroundColor": "#9d6c65"
+		"navigationBarBackgroundColor": "#FFFFFF"
 		
 		// "navigationStyle": "custom"
 

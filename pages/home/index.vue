@@ -6,10 +6,10 @@
 		
 		<!-- 定位   搜索栏 （待完善）-->
 		<view class="top">
-			<view class="address" @click="chooseAddress">{{address}}swe</view>
+			<view class="address" @click="chooseAddress">{{address}}选择</view>
 			<view class="search">
 				<input class="iconfont iconsearch" type="text" value="" placeholder="搜索"/>
-				<button>搜索</button>
+				<view class="sousuo">搜索</view>
 			</view>
 			
 		</view>
@@ -31,10 +31,10 @@
 		
 		<!-- 分区 -->
 		<view class="area_list">
-			<view class="area_item" v-for="item in areas" :key = "item.id">
+			<navigator class="area_item" v-for="item in areas" :key = "item.id" :url="item.url">
 				<view class="area_img"><image :src="item.cover" mode=""></image></view>
 				<view class="area_title">{{item.title}}</view>
-			</view>
+			</navigator>
 		</view>
 		
 		
@@ -110,7 +110,8 @@
 					},
 					{
 						cover:"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg95.699pic.com%2Fphoto%2F40125%2F0071.gif_wh300.gif%21%2Fgifto%2Ftrue&refer=http%3A%2F%2Fimg95.699pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1629288120&t=ff9b7266a4adffb3039e07f0c159072a",
-						title:"职业攻略"
+						title:"职业攻略",
+						url:"/pages/strategy/index"
 					},
 					{
 						cover:"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg95.699pic.com%2Fphoto%2F40125%2F0071.gif_wh300.gif%21%2Fgifto%2Ftrue&refer=http%3A%2F%2Fimg95.699pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1629288120&t=ff9b7266a4adffb3039e07f0c159072a",
@@ -163,33 +164,37 @@
 	.top{
 		display: flex;
 		padding: 10rpx 20rpx;
-		
+		border-bottom: 1px solid #f0f0f0;
 		.address{
+			width: 100rpx;
+			height: 60rpx;
 			line-height: 60rpx;
+			text-align: center;
+			overflow: hidden;
 		}
 		
 		.search{
 			display: flex;
-			flex: 7;
+			width: 100%;
 			line-height: 60rpx;
 			input{
 				border-radius: 50rpx;
 				background-color: #e9e8ec;
 				height: 60rpx;
-				flex: 7;
+				flex: 5;
 				padding-left: 20rpx;
+				margin-right: 10rpx;
+				
+				line-height: 60rpx;
 			}
 			
-			button{
-				flex: 1;
+			sousuo{
 				height: 60rpx;
 				font-size: 24rpx;
-				
-				margin-right: auto;
+				text-align: center;
+				background-color: #f4f4f4;
 			}
 		}
-		
-		
 	}
 	.home_page{
 		background-color: #f1f1f1;
